@@ -1,19 +1,20 @@
 {
   "name": "CodeForge Academy",
   "short_name": "CodeForge",
-  "description": "Allenamento pratico per C#, SQL Server, Angular, Git e logica.",
+  "id": "./",
+  "description": "Allenamento pratico per C#, SQL Server, Angular, Git, logica e debugging.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
-  "orientation": "portrait-primary",
+  "display_override": ["window-controls-overlay", "standalone"],
+  "orientation": "any",
   "background_color": "#06101d",
   "theme_color": "#07111f",
-  "icons": [
-    {
-      "src": "icon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
-      "purpose": "any maskable"
-    }
+  "lang": "it-IT",
+  "categories": ["education", "productivity", "developer tools"],
+  "icons": [{"src":"icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}],
+  "shortcuts": [
+    {"name":"Allenamento giornaliero","short_name":"Allenati","url":"./index.html?action=daily","icons":[{"src":"icon.svg","sizes":"any","type":"image/svg+xml"}]},
+    {"name":"Modalità esame","short_name":"Esame","url":"./index.html?action=exam","icons":[{"src":"icon.svg","sizes":"any","type":"image/svg+xml"}]}
   ]
 }

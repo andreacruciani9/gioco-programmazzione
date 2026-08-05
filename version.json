@@ -1,5 +1,13 @@
 {
-  "version": "1.0.0",
-  "updatedAt": "2026-08-05",
-  "name": "Prima pubblicazione CodeForge Academy"
+  "version": "2.1.0",
+  "updatedAt": "2026-08-06",
+  "name": "Native Ready iOS + Android",
+  "changes": [
+    "Modalità esame",
+    "Editor avanzato",
+    "Badge e livelli",
+    "Pacchetto offline",
+    "Accessibilità",
+    "Bridge notifiche/aptica/acquisti/sync/widget"
+  ]
 }

@@ -1,29 +1,45 @@
 # CodeForge Academy
 
-PWA installabile su iPhone per allenarsi con C#, SQL Server, Angular, Git e logica attraverso esercizi pratici.
+App di allenamento pratico per C#, SQL Server, Angular, Git, logica e debugging.
 
-## Funzioni
+## Versione 2.1 Native Ready
 
-- completamento di codice
-- traduzione di requisiti in codice
-- scrittura di funzioni
-- debugging
-- ripasso programmato
-- progressi, XP, precisione e serie giornaliera
-- utilizzo offline
-- aggiornamento automatico all'apertura dell'app
+La stessa base funziona come:
+- PWA installabile su iPhone e Android;
+- progetto iOS tramite Capacitor e Xcode;
+- progetto Android tramite Capacitor e Android Studio;
+- base per App Store e Google Play.
 
-## Pubblicazione
+## Novità principali
 
-Il workflow `.github/workflows/pages.yml` pubblica automaticamente il contenuto del branch `main` su GitHub Pages.
+- editor di codice migliorato;
+- modalità esame con timer;
+- obiettivi giornalieri, livelli e 12 badge;
+- 24 esercizi con nuovi problemi di logica;
+- pacchetto offline scaricabile;
+- backup e importazione progressi;
+- accessibilità e dimensione testo regolabile;
+- bridge per notifiche, aptica, widget, sincronizzazione e acquisti;
+- configurazione Capacitor condivisa iOS/Android.
 
-Ogni aggiornamento deve modificare anche la costante `CACHE` in `sw.js`, così l'app installata rileva subito la nuova versione.
+## Avvio web
 
-## Installazione su iPhone
+Pubblicare il branch `main` con GitHub Pages oppure aprire il progetto tramite un server HTTPS.
 
-1. Aprire l'indirizzo GitHub Pages in Safari.
-2. Toccare **Condividi**.
-3. Selezionare **Aggiungi alla schermata Home**.
-4. Aprire CodeForge dalla nuova icona.
+## Generazione app native
 
-I progressi restano salvati sul dispositivo durante gli aggiornamenti.
+```bash
+npm install
+npm run prepare:native
+npx cap add ios
+npx cap add android
+npm run cap:sync
+```
+
+Documentazione:
+- `docs/NATIVE_FEATURES.md`
+- `docs/STORE_RELEASE.md`
+- `store/IOS_CHECKLIST.md`
+- `store/ANDROID_CHECKLIST.md`
+
+I progressi esistenti usano ancora la chiave `codeforge_live_v2` e non vengono azzerati dall'aggiornamento.

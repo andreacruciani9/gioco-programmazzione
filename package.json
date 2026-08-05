@@ -1,0 +1,24 @@
+{
+  "name": "codeforge-academy",
+  "version": "2.1.0",
+  "private": true,
+  "description": "CodeForge Academy - PWA e app native iOS/Android con Capacitor",
+  "scripts": {
+    "prepare:native": "node scripts/prepare-native.mjs",
+    "cap:sync": "npm run prepare:native && npx cap sync",
+    "ios": "npm run cap:sync && npx cap open ios",
+    "android": "npm run cap:sync && npx cap open android"
+  },
+  "dependencies": {
+    "@capacitor/android": "latest",
+    "@capacitor/core": "latest",
+    "@capacitor/haptics": "latest",
+    "@capacitor/ios": "latest",
+    "@capacitor/local-notifications": "latest",
+    "@capacitor/preferences": "latest"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "latest",
+    "typescript": "latest"
+  }
+}

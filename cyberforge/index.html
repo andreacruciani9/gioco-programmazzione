@@ -11,6 +11,7 @@
   <link rel="icon" href="icon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="icon.svg" />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="attack-defense.css" />
   <title>CyberForge Academy</title>
 </head>
 <body>
@@ -37,6 +38,39 @@
             <button id="dailyButton" class="secondary">Missione rapida</button>
           </div>
           <p class="safety-note">Solo ambienti simulati: nessun bersaglio reale, malware o credenziale.</p>
+        </article>
+
+        <article id="attackDefenseCard" class="card attack-defense-card">
+          <div class="section-heading">
+            <div>
+              <span class="eyebrow">NUOVA MODALITÀ</span>
+              <h2>Attacco e difesa</h2>
+            </div>
+            <span id="attackDefenseProgress" class="pill">0/10</span>
+          </div>
+          <p class="attack-defense-copy">
+            Scegli da quale lato operare. Nel percorso di attacco impari a ragionare come un red team attraverso una CyberRange completamente simulata. Nel percorso di difesa analizzi gli stessi eventi, applichi hardening, rilevamento, contenimento e recupero. Ogni scenario parte dalle basi, cambia quando completi un obiettivo e include codice commentato, suggerimenti ed esercizi guidati.
+          </p>
+
+          <div class="mode-paths">
+            <button id="startAttackPath" class="path-card attack">
+              <span class="path-icon">⚔️</span>
+              <h3>Attacco simulato</h3>
+              <p>Ricognizione Wi‑Fi locale, analisi delle configurazioni, servizi esposti, movimento laterale e locker innocuo in memoria.</p>
+              <span class="path-meta"><span>Da Base a Pro</span><strong id="attackPathProgress">0/5</strong></span>
+            </button>
+
+            <button id="startDefensePath" class="path-card defense">
+              <span class="path-icon">🛡️</span>
+              <h3>Difesa operativa</h3>
+              <p>Hardening Wi‑Fi, analisi dei log, segmentazione, risposta al locker simulato e rilevamenti comportamentali.</p>
+              <span class="path-meta"><span>Da Base a Pro</span><strong id="defensePathProgress">0/5</strong></span>
+            </button>
+          </div>
+
+          <p class="training-disclaimer">
+            Tutto avviene dentro l’app con dati inventati e codice non operativo. Non vengono fornite procedure per accedere a reti reali, raccogliere password, cifrare file o distribuire malware.
+          </p>
         </article>
 
         <section class="stats-grid">
@@ -101,6 +135,52 @@
         </article>
       </section>
 
+      <section id="battleView" class="view">
+        <div class="battle-toolbar">
+          <button id="exitBattle" class="secondary">← Percorsi</button>
+          <span id="battleMode" class="pill battle-mode">Attacco simulato</span>
+          <span id="battleLevel" class="pill accent battle-level">Base · 1/5</span>
+        </div>
+        <div class="progress-track compact"><i id="battleProgress"></i></div>
+
+        <article class="card battle-card">
+          <div class="battle-header">
+            <div>
+              <span class="eyebrow">SCENARIO DINAMICO</span>
+              <h2 id="battleTitle"></h2>
+            </div>
+          </div>
+          <p id="battleObjective" class="lead"></p>
+
+          <div class="scenario-story">
+            <strong>Situazione</strong>
+            <span id="battleStory"></span>
+          </div>
+
+          <div id="labMap" class="lab-map"></div>
+
+          <div id="battleLesson" class="lesson-box"></div>
+
+          <section class="learning-panel">
+            <header>
+              <strong>Codice del laboratorio</strong>
+              <span>Commentato e non operativo</span>
+            </header>
+            <pre id="battleCode"></pre>
+          </section>
+
+          <h3 id="battleQuestion" class="battle-question"></h3>
+          <div id="battleAnswerArea"></div>
+          <div id="battleFeedback" class="battle-feedback hidden"></div>
+
+          <div class="battle-actions">
+            <button id="battleHint" class="secondary">Suggerimento</button>
+            <button id="battleVerify" class="primary">Verifica</button>
+            <button id="battleNext" class="primary hidden">Prossimo scenario</button>
+          </div>
+        </article>
+      </section>
+
       <section id="resultView" class="view">
         <article class="card result-card">
           <div class="result-icon">🛡️</div>
@@ -114,12 +194,14 @@
     </main>
   </div>
 
-  <nav class="bottom-nav">
+  <nav class="bottom-nav has-battle">
     <button id="navDashboard" class="active"><span>⌂</span>Mappa</button>
+    <button id="navBattle"><span>⚔️</span>A&amp;D</button>
     <button id="navDaily"><span>⚡</span>Rapida</button>
     <button id="navReview"><span>◎</span>Ripasso</button>
   </nav>
 
   <script src="app.js"></script>
+  <script src="attack-defense.js"></script>
 </body>
 </html>

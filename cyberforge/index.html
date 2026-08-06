@@ -21,7 +21,7 @@
         <div class="brand-mark">CF</div>
         <div>
           <strong>CyberForge Academy</strong>
-          <span>Attacca in laboratorio. Difendi nel mondo reale.</span>
+          <span>Impara nel laboratorio. Proteggi nel mondo reale.</span>
         </div>
       </div>
       <button id="updateButton" class="icon-button hidden" aria-label="Aggiorna app">↻</button>
@@ -31,45 +31,45 @@
       <section id="dashboardView" class="view active">
         <article class="hero card">
           <div class="eyebrow">PERCORSO A OBIETTIVI</div>
-          <h1>Da recluta a difensore élite.</h1>
-          <p>Missioni simulate e locali su attacco, difesa, secure coding, reti, log e risposta agli incidenti.</p>
+          <h1>Da zero a professionista cyber.</h1>
+          <p>Missioni simulate e locali su attacco, difesa, secure coding, reti, identità, cloud, log e risposta agli incidenti.</p>
           <div class="hero-actions">
             <button id="continueButton" class="primary">Continua il percorso</button>
             <button id="dailyButton" class="secondary">Missione rapida</button>
           </div>
-          <p class="safety-note">Solo ambienti simulati: nessun bersaglio reale, malware o credenziale.</p>
+          <p class="safety-note">La modalità offensiva usa solo una CyberRange inventata: i comandi non funzionano contro sistemi reali.</p>
         </article>
 
         <article id="attackDefenseCard" class="card attack-defense-card">
           <div class="section-heading">
             <div>
-              <span class="eyebrow">NUOVA MODALITÀ</span>
+              <span class="eyebrow">TERMINALE INTERATTIVO</span>
               <h2>Attacco e difesa</h2>
             </div>
-            <span id="attackDefenseProgress" class="pill">0/10</span>
+            <span id="attackDefenseProgress" class="pill">0/14</span>
           </div>
           <p class="attack-defense-copy">
-            Scegli da quale lato operare. Nel percorso di attacco impari a ragionare come un red team attraverso una CyberRange completamente simulata. Nel percorso di difesa analizzi gli stessi eventi, applichi hardening, rilevamento, contenimento e recupero. Ogni scenario parte dalle basi, cambia quando completi un obiettivo e include codice commentato, suggerimenti ed esercizi guidati.
+            Scegli il ruolo e scrivi personalmente ogni comando o blocco di codice. Il terminale ti guida con suggerimenti progressivi, esegue la soluzione soltanto nel simulatore e, dopo ogni fase, spiega cosa significa ogni riga, cosa fa e perché serve.
           </p>
 
           <div class="mode-paths">
             <button id="startAttackPath" class="path-card attack">
               <span class="path-icon">⚔️</span>
               <h3>Attacco simulato</h3>
-              <p>Ricognizione Wi‑Fi locale, analisi delle configurazioni, servizi esposti, movimento laterale e locker innocuo in memoria.</p>
-              <span class="path-meta"><span>Da Base a Pro</span><strong id="attackPathProgress">0/5</strong></span>
+              <p>Penetra sistemi inventati della CyberRange, conquista flag di laboratorio e dimostra l’impatto senza toccare reti, account o file reali.</p>
+              <span class="path-meta"><span>Wi‑Fi · Web · API · Identità · Cloud · Endpoint · Pro</span><strong id="attackPathProgress">0/7</strong></span>
             </button>
 
             <button id="startDefensePath" class="path-card defense">
               <span class="path-icon">🛡️</span>
               <h3>Difesa operativa</h3>
-              <p>Hardening Wi‑Fi, analisi dei log, segmentazione, risposta al locker simulato e rilevamenti comportamentali.</p>
-              <span class="path-meta"><span>Da Base a Pro</span><strong id="defensePathProgress">0/5</strong></span>
+              <p>Impedisci l’accesso, correggi il codice, limita i privilegi, rileva attività sospette, contieni e ripristina.</p>
+              <span class="path-meta"><span>Hardening · Secure code · Detection · Incident response</span><strong id="defensePathProgress">0/7</strong></span>
             </button>
           </div>
 
           <p class="training-disclaimer">
-            Tutto avviene dentro l’app con dati inventati e codice non operativo. Non vengono fornite procedure per accedere a reti reali, raccogliere password, cifrare file o distribuire malware.
+            I comandi <strong>cyberlab</strong> e <strong>defend</strong> sono un linguaggio inventato dell’app. Non eseguono scansioni, accessi, cifrature o modifiche sul dispositivo.
           </p>
         </article>
 
@@ -118,15 +118,9 @@
           </div>
           <h2 id="missionTitle"></h2>
           <p id="missionObjective" class="lead"></p>
-
-          <div class="briefing">
-            <span>Briefing simulato</span>
-            <pre id="missionBriefing"></pre>
-          </div>
-
+          <div class="briefing"><span>Briefing simulato</span><pre id="missionBriefing"></pre></div>
           <div id="answerArea"></div>
           <div id="feedback" class="feedback hidden"></div>
-
           <div class="mission-actions">
             <button id="hintButton" class="secondary">Suggerimento</button>
             <button id="verifyButton" class="primary">Verifica</button>
@@ -139,43 +133,53 @@
         <div class="battle-toolbar">
           <button id="exitBattle" class="secondary">← Percorsi</button>
           <span id="battleMode" class="pill battle-mode">Attacco simulato</span>
-          <span id="battleLevel" class="pill accent battle-level">Base · 1/5</span>
+          <span id="battleLevel" class="pill accent battle-level">Base · 1/7</span>
         </div>
         <div class="progress-track compact"><i id="battleProgress"></i></div>
 
         <article class="card battle-card">
           <div class="battle-header">
             <div>
-              <span class="eyebrow">SCENARIO DINAMICO</span>
+              <span id="battleDomain" class="eyebrow">RETI</span>
               <h2 id="battleTitle"></h2>
             </div>
           </div>
+
           <p id="battleObjective" class="lead"></p>
-
-          <div class="scenario-story">
-            <strong>Situazione</strong>
-            <span id="battleStory"></span>
-          </div>
-
+          <div class="scenario-story"><strong>Scenario</strong><span id="battleStory"></span></div>
           <div id="labMap" class="lab-map"></div>
 
           <div id="battleLesson" class="lesson-box"></div>
 
-          <section class="learning-panel">
-            <header>
-              <strong>Codice del laboratorio</strong>
-              <span>Commentato e non operativo</span>
+          <section class="terminal-panel" aria-label="Terminale della CyberRange">
+            <header class="terminal-titlebar">
+              <div><i></i><i></i><i></i></div>
+              <strong>cyberforge@range:~</strong>
+              <span>SIMULATORE LOCALE</span>
             </header>
-            <pre id="battleCode"></pre>
+
+            <div id="terminalHistory" class="terminal-history"></div>
+
+            <div class="terminal-editor">
+              <label for="terminalInput">
+                <span id="terminalPrompt">cyberlab$</span>
+                <small>Riscrivi il comando o il codice richiesto</small>
+              </label>
+              <textarea id="terminalInput" spellcheck="false" autocapitalize="off" autocomplete="off"></textarea>
+            </div>
           </section>
 
-          <h3 id="battleQuestion" class="battle-question"></h3>
-          <div id="battleAnswerArea"></div>
+          <section class="instruction-card">
+            <span class="eyebrow">OBIETTIVO DEL TERMINALE</span>
+            <h3 id="battleQuestion"></h3>
+            <p id="expectedFormat"></p>
+          </section>
+
           <div id="battleFeedback" class="battle-feedback hidden"></div>
 
           <div class="battle-actions">
-            <button id="battleHint" class="secondary">Suggerimento</button>
-            <button id="battleVerify" class="primary">Verifica</button>
+            <button id="battleHint" class="secondary">Suggerimento 1/3</button>
+            <button id="battleVerify" class="primary">Esegui nel laboratorio</button>
             <button id="battleNext" class="primary hidden">Prossimo scenario</button>
           </div>
         </article>
@@ -196,7 +200,7 @@
 
   <nav class="bottom-nav has-battle">
     <button id="navDashboard" class="active"><span>⌂</span>Mappa</button>
-    <button id="navBattle"><span>⚔️</span>A&amp;D</button>
+    <button id="navBattle"><span>⌨️</span>Terminale</button>
     <button id="navDaily"><span>⚡</span>Rapida</button>
     <button id="navReview"><span>◎</span>Ripasso</button>
   </nav>

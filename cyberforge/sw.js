@@ -1,10 +1,12 @@
-const CACHE = 'cyberforge-v2-attack-defense';
+const CACHE = 'cyberforge-v3-terminal-training';
 const ASSETS = [
   './',
   './index.html',
   './styles.css',
   './attack-defense.css',
   './app.js',
+  './attack-scenarios.js',
+  './defense-scenarios.js',
   './attack-defense.js',
   './manifest.webmanifest',
   './icon.svg'

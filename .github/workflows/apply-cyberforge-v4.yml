@@ -1,0 +1,32 @@
+name: Apply CyberForge v4 patch
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - cyberforge/patch-v4.py
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Apply patch
+        run: python cyberforge/patch-v4.py
+
+      - name: Commit generated changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add cyberforge/index.html cyberforge/sw.js
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Collega codice reale e moduli privacy CyberForge v4"
+            git push
+          fi

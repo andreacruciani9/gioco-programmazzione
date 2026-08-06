@@ -1,13 +1,17 @@
-const CACHE = 'cyberforge-v3-terminal-training';
+const CACHE = 'cyberforge-v4-real-code-privacy';
 const ASSETS = [
   './',
   './index.html',
   './styles.css',
   './attack-defense.css',
+  './real-world.css',
   './app.js',
   './attack-scenarios.js',
   './defense-scenarios.js',
+  './privacy-scenarios.js',
   './attack-defense.js',
+  './real-world-examples.js',
+  './real-world-ui.js',
   './manifest.webmanifest',
   './icon.svg'
 ];

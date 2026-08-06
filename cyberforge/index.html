@@ -12,6 +12,7 @@
   <link rel="apple-touch-icon" href="icon.svg" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="attack-defense.css" />
+  <link rel="stylesheet" href="real-world.css" />
   <title>CyberForge Academy</title>
 </head>
 <body>
@@ -46,10 +47,10 @@
               <span class="eyebrow">TERMINALE INTERATTIVO</span>
               <h2>Attacco e difesa</h2>
             </div>
-            <span id="attackDefenseProgress" class="pill">0/14</span>
+            <span id="attackDefenseProgress" class="pill">0/18</span>
           </div>
           <p class="attack-defense-copy">
-            Scegli il ruolo e scrivi personalmente ogni comando o blocco di codice. Il terminale ti guida con suggerimenti progressivi, esegue la soluzione soltanto nel simulatore e, dopo ogni fase, spiega cosa significa ogni riga, cosa fa e perché serve.
+            Scegli il ruolo e scrivi personalmente ogni comando o blocco di codice. Prima lavori nella CyberRange; dopo la soluzione si sblocca un esempio equivalente in Python, C#, JavaScript, Sigma o configurazione reale, limitato a localhost, file locali e sistemi autorizzati.
           </p>
 
           <div class="mode-paths">
@@ -57,19 +58,19 @@
               <span class="path-icon">⚔️</span>
               <h3>Attacco simulato</h3>
               <p>Penetra sistemi inventati della CyberRange, conquista flag di laboratorio e dimostra l’impatto senza toccare reti, account o file reali.</p>
-              <span class="path-meta"><span>Wi‑Fi · Web · API · Identità · Cloud · Endpoint · Pro</span><strong id="attackPathProgress">0/7</strong></span>
+              <span class="path-meta"><span>Wi‑Fi · Web · API · Identità · Cloud · Endpoint · Pro</span><strong id="attackPathProgress">0/9</strong></span>
             </button>
 
             <button id="startDefensePath" class="path-card defense">
               <span class="path-icon">🛡️</span>
               <h3>Difesa operativa</h3>
               <p>Impedisci l’accesso, correggi il codice, limita i privilegi, rileva attività sospette, contieni e ripristina.</p>
-              <span class="path-meta"><span>Hardening · Secure code · Detection · Incident response</span><strong id="defensePathProgress">0/7</strong></span>
+              <span class="path-meta"><span>Hardening · Secure code · Detection · Incident response</span><strong id="defensePathProgress">0/9</strong></span>
             </button>
           </div>
 
           <p class="training-disclaimer">
-            I comandi <strong>cyberlab</strong> e <strong>defend</strong> sono un linguaggio inventato dell’app. Non eseguono scansioni, accessi, cifrature o modifiche sul dispositivo.
+            I comandi <strong>cyberlab</strong> e <strong>defend</strong> restano simulati. Gli esempi reali lavorano solo su localhost, file locali, test automatici e dati sintetici. Privacy legittima sì; cancellazione delle tracce, falsificazione dell’identità ed elusione dei controlli no.
           </p>
         </article>
 
@@ -154,7 +155,7 @@
             <header class="terminal-titlebar">
               <div><i></i><i></i><i></i></div>
               <strong>cyberforge@range:~</strong>
-              <span>SIMULATORE LOCALE</span>
+              <span>SIMULATORE + CODICE REALE</span>
             </header>
             <div id="terminalHistory" class="terminal-history"></div>
             <div class="terminal-editor">
@@ -203,6 +204,9 @@
   <script src="app.js"></script>
   <script src="attack-scenarios.js"></script>
   <script src="defense-scenarios.js"></script>
+  <script src="privacy-scenarios.js"></script>
   <script src="attack-defense.js"></script>
+  <script src="real-world-examples.js"></script>
+  <script src="real-world-ui.js"></script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-const CACHE = 'cyberforge-v4-real-code-privacy';
+const CACHE = 'cyberforge-v5-secure-code-evidence';
 const ASSETS = [
   './',
   './index.html',
@@ -9,8 +9,10 @@ const ASSETS = [
   './attack-scenarios.js',
   './defense-scenarios.js',
   './privacy-scenarios.js',
+  './update-2026-08-07.js',
   './attack-defense.js',
   './real-world-examples.js',
+  './update-2026-08-07-examples.js',
   './real-world-ui.js',
   './manifest.webmanifest',
   './icon.svg'

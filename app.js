@@ -2,7 +2,7 @@ const $ = id => document.getElementById(id);
 const PROGRESS_KEY = "codeforge_live_v2";
 const SETTINGS_KEY = "codeforge_settings_v2";
 const PACK_KEY = "codeforge_exercise_pack";
-const APP_VERSION = "2.1.0";
+const APP_VERSION = "2.2.0";
 
 const DEFAULT_SETTINGS = {
   count: 10,
@@ -100,8 +100,11 @@ async function loadQuestions(force=false) {
     const response = await fetch(`exercises.json?v=${APP_VERSION}`, { cache:"no-store" });
     if (!response.ok) throw new Error("Pacchetto non disponibile");
     const pack = await response.json();
-    questions = pack.exercises;
-    localStorage.setItem(PACK_KEY, JSON.stringify(pack));
+    const addonResponse = await fetch(`exercises-addon-2.2.json?v=${APP_VERSION}`, { cache:"no-store" });
+    const addon = addonResponse.ok ? await addonResponse.json() : { exercises: [] };
+    const byId = new Map([...pack.exercises, ...addon.exercises].map(item => [item.id, item]));
+    questions = [...byId.values()];
+    localStorage.setItem(PACK_KEY, JSON.stringify({ ...pack, version: APP_VERSION, exercises: questions }));
   } catch (error) {
     if (!questions.length) throw error;
   }

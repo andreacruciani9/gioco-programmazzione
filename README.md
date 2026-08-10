@@ -43,3 +43,7 @@ Documentazione:
 - `store/ANDROID_CHECKLIST.md`
 
 I progressi esistenti usano ancora la chiave `codeforge_live_v2` e non vengono azzerati dall'aggiornamento.
+
+## Aggiornamento 2.2.0
+
+Nuovi esercizi pratici su C#, SQL Server, Angular, Git, debugging e logica applicata. Il pacchetto aggiuntivo viene unito automaticamente agli esercizi esistenti e la PWA usa una nuova cache aggiornabile.

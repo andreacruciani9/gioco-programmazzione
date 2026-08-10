@@ -1,5 +1,6 @@
 from pathlib import Path
 
+# CodeForge 2.2 patch runner
 app = Path('app.js')
 text = app.read_text(encoding='utf-8')
 text = text.replace('const APP_VERSION = "2.1.0";', 'const APP_VERSION = "2.2.0";')

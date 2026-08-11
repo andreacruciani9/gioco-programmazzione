@@ -84,3 +84,25 @@ verifyAdScenario = function verifyAdScenarioWithRealCode() {
 
 document.getElementById('battleVerify').onclick = verifyAdScenario;
 ensureRealWorldPanel();
+
+// Carica in sequenza le missioni e gli esempi dell'aggiornamento corrente.
+function loadCyberForgeUpdate(src) {
+  return new Promise((resolve, reject) => {
+    const script = document.createElement('script');
+    script.src = src;
+    script.onload = resolve;
+    script.onerror = reject;
+    document.body.appendChild(script);
+  });
+}
+
+(async function loadCurrentCyberForgeContent() {
+  try {
+    await loadCyberForgeUpdate('./update-2026-08-11.js');
+    await loadCyberForgeUpdate('./update-2026-08-11-examples.js');
+    refreshAttackDefenseCard();
+    dashboard();
+  } catch (error) {
+    console.error('Impossibile caricare aggiornamento CyberForge 2026-08-11', error);
+  }
+})();

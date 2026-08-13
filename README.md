@@ -47,3 +47,9 @@ I progressi esistenti usano ancora la chiave `codeforge_live_v2` e non vengono a
 ## Aggiornamento 2.2.0
 
 Nuovi esercizi pratici su C#, SQL Server, Angular, Git, debugging e logica applicata. Il pacchetto aggiuntivo viene unito automaticamente agli esercizi esistenti e la PWA usa una nuova cache aggiornabile.
+
+## Aggiornamento 2.3.0
+
+Aggiunti 22 nuovi esercizi progressivi nel pacchetto `exercises-addon-2.3.json`, senza riutilizzare gli ID dei pacchetti precedenti. La release approfondisce C# con stato, null e LINQ; SQL Server con transazioni, NULL, aggregazioni e aggiornamenti massivi; Angular con guard clause, lifecycle e flussi dipendenti; Git con revert, reflog e hotfix; debugging con stack trace, stato UI e repository; logica con booleani, cicli, collezioni, edge case, riconciliazione e traduzione di requisiti in regole verificabili.
+
+Rispetto alla 2.2.0 il focus passa da singole tecniche isolate a problemi multi-step più vicini al lavoro reale, con maggiore attenzione a flusso del codice, stato, atomicità, recovery ed edge case.

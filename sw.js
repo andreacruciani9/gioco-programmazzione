@@ -1,5 +1,5 @@
-const CACHE = "codeforge-v2-2-2026-08-10";
-const CORE = ["./","./index.html","./styles.css","./app.js","./native-bridge.js","./config.js","./manifest.json","./icon.svg","./exercises.json","./exercises-addon-2.2.json"];
+const CACHE = "codeforge-v2-3-2026-08-13";
+const CORE = ["./","./index.html","./styles.css","./app.js","./native-bridge.js","./config.js","./manifest.json","./icon.svg","./exercises.json","./exercises-addon-2.2.json","./exercises-addon-2.3.json"];
 
 self.addEventListener("install", event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(CORE)));

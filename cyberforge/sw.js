@@ -1,4 +1,4 @@
-const CACHE = 'cyberforge-v6-network-privacy-detection';
+const CACHE = 'cyberforge-v7-tls-supplychain-identity';
 const ASSETS = [
   './',
   './index.html',
@@ -11,10 +11,12 @@ const ASSETS = [
   './privacy-scenarios.js',
   './update-2026-08-07.js',
   './update-2026-08-11.js',
+  './update-2026-08-14.js',
   './attack-defense.js',
   './real-world-examples.js',
   './update-2026-08-07-examples.js',
   './update-2026-08-11-examples.js',
+  './update-2026-08-14-examples.js',
   './real-world-ui.js',
   './manifest.webmanifest',
   './icon.svg'

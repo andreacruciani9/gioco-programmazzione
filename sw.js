@@ -1,5 +1,18 @@
-const CACHE = "codeforge-v2-3-2026-08-13";
-const CORE = ["./","./index.html","./styles.css","./app.js","./native-bridge.js","./config.js","./manifest.json","./icon.svg","./exercises.json","./exercises-addon-2.2.json","./exercises-addon-2.3.json"];
+const CACHE = "codeforge-v2-4-2026-08-17";
+const CORE = [
+  "./",
+  "./index.html",
+  "./styles.css",
+  "./app.js",
+  "./native-bridge.js",
+  "./config.js",
+  "./manifest.json",
+  "./icon.svg",
+  "./exercises.json",
+  "./exercises-addon-2.2.json",
+  "./exercises-addon-2.3.json",
+  "./exercises-addon-2.4.json"
+];
 
 self.addEventListener("install", event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(CORE)));
@@ -8,7 +21,11 @@ self.addEventListener("install", event => {
 self.addEventListener("activate", event => {
   event.waitUntil(
     caches.keys()
-      .then(keys => Promise.all(keys.filter(key => key.startsWith("codeforge-") && key !== CACHE && !key.startsWith("codeforge-offline-")).map(key => caches.delete(key))))
+      .then(keys => Promise.all(
+        keys
+          .filter(key => key.startsWith("codeforge-") && key !== CACHE && !key.startsWith("codeforge-offline-"))
+          .map(key => caches.delete(key))
+      ))
       .then(() => self.clients.claim())
   );
 });
@@ -17,10 +34,54 @@ self.addEventListener("message", event => {
   if (event.data?.type === "SKIP_WAITING") self.skipWaiting();
 });
 
+async function readJson(requestUrl, fallbackPath) {
+  try {
+    const response = await fetch(requestUrl, { cache: "no-store" });
+    if (response.ok) return await response.json();
+  } catch (_) {}
+
+  const cached = await caches.match(fallbackPath);
+  return cached ? cached.json() : { exercises: [] };
+}
+
+async function mergedAddonResponse(event) {
+  const baseUrl = new URL(event.request.url);
+  const root = new URL("./", self.location.href);
+
+  const [v22, v23, v24] = await Promise.all([
+    readJson(new URL("exercises-addon-2.2.json", root), "./exercises-addon-2.2.json"),
+    readJson(new URL("exercises-addon-2.3.json", root), "./exercises-addon-2.3.json"),
+    readJson(new URL("exercises-addon-2.4.json", root), "./exercises-addon-2.4.json")
+  ]);
+
+  const byId = new Map([
+    ...(v22.exercises || []),
+    ...(v23.exercises || []),
+    ...(v24.exercises || [])
+  ].map(item => [item.id, item]));
+
+  return new Response(JSON.stringify({
+    version: "2.4.0",
+    updatedAt: "2026-08-17",
+    exercises: [...byId.values()]
+  }), {
+    status: 200,
+    headers: {
+      "Content-Type": "application/json; charset=utf-8",
+      "Cache-Control": "no-store"
+    }
+  });
+}
+
 self.addEventListener("fetch", event => {
   if (event.request.method !== "GET") return;
   const url = new URL(event.request.url);
   if (url.origin !== self.location.origin) return;
+
+  if (url.pathname.endsWith("/exercises-addon-2.2.json")) {
+    event.respondWith(mergedAddonResponse(event));
+    return;
+  }
 
   if (event.request.mode === "navigate") {
     event.respondWith(

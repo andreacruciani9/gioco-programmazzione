@@ -1,4 +1,4 @@
-const CACHE = 'cyberforge-v7-tls-supplychain-identity';
+const CACHE = 'cyberforge-v8-network-web-iac-defense';
 const ASSETS = [
   './',
   './index.html',
@@ -12,11 +12,13 @@ const ASSETS = [
   './update-2026-08-07.js',
   './update-2026-08-11.js',
   './update-2026-08-14.js',
+  './update-2026-08-18.js',
   './attack-defense.js',
   './real-world-examples.js',
   './update-2026-08-07-examples.js',
   './update-2026-08-11-examples.js',
   './update-2026-08-14-examples.js',
+  './update-2026-08-18-examples.js',
   './real-world-ui.js',
   './manifest.webmanifest',
   './icon.svg'

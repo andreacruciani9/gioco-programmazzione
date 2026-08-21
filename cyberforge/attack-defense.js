@@ -138,31 +138,3 @@ document.getElementById('battleVerify').onclick = verifyAdScenario;
 document.getElementById('battleNext').onclick = nextAdScenario;
 document.getElementById('battleHint').onclick = showAdHint;
 refreshAttackDefenseCard();
-
-function loadTrainingScript(src) {
-  return new Promise((resolve, reject) => {
-    const existing = document.querySelector(`script[data-cyberforge-update="${src}"]`);
-    if (existing) return resolve();
-    const script = document.createElement('script');
-    script.src = src;
-    script.dataset.cyberforgeUpdate = src;
-    script.onload = resolve;
-    script.onerror = reject;
-    document.body.appendChild(script);
-  });
-}
-
-(async function loadScheduledContent() {
-  try {
-    await loadTrainingScript('./update-2026-08-11.js');
-    await loadTrainingScript('./update-2026-08-14.js');
-    AD_SCENARIOS.attack = CYBERFORGE_ATTACK;
-    AD_SCENARIOS.defense = CYBERFORGE_DEFENSE;
-    refreshAttackDefenseCard();
-
-    await loadTrainingScript('./update-2026-08-11-examples.js');
-    await loadTrainingScript('./update-2026-08-14-examples.js');
-  } catch (error) {
-    console.error('CyberForge: caricamento aggiornamenti non riuscito', error);
-  }
-})();

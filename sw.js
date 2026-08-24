@@ -1,4 +1,4 @@
-const CACHE = "codeforge-v2-5-2026-08-20";
+const CACHE = "codeforge-v2-6-2026-08-24";
 const CORE = [
   "./",
   "./index.html",
@@ -12,7 +12,8 @@ const CORE = [
   "./exercises-addon-2.2.json",
   "./exercises-addon-2.3.json",
   "./exercises-addon-2.4.json",
-  "./exercises-addon-2.5.json"
+  "./exercises-addon-2.5.json",
+  "./exercises-addon-2.6.json"
 ];
 
 self.addEventListener("install", event => {
@@ -40,38 +41,24 @@ async function readJson(requestUrl, fallbackPath) {
     const response = await fetch(requestUrl, { cache: "no-store" });
     if (response.ok) return await response.json();
   } catch (_) {}
-
   const cached = await caches.match(fallbackPath);
   return cached ? cached.json() : { exercises: [] };
 }
 
-async function mergedAddonResponse(event) {
+async function mergedAddonResponse() {
   const root = new URL("./", self.location.href);
-
-  const [v22, v23, v24, v25] = await Promise.all([
-    readJson(new URL("exercises-addon-2.2.json", root), "./exercises-addon-2.2.json"),
-    readJson(new URL("exercises-addon-2.3.json", root), "./exercises-addon-2.3.json"),
-    readJson(new URL("exercises-addon-2.4.json", root), "./exercises-addon-2.4.json"),
-    readJson(new URL("exercises-addon-2.5.json", root), "./exercises-addon-2.5.json")
-  ]);
-
-  const byId = new Map([
-    ...(v22.exercises || []),
-    ...(v23.exercises || []),
-    ...(v24.exercises || []),
-    ...(v25.exercises || [])
-  ].map(item => [item.id, item]));
-
+  const versions = ["2.2", "2.3", "2.4", "2.5", "2.6"];
+  const packs = await Promise.all(versions.map(v =>
+    readJson(new URL(`exercises-addon-${v}.json`, root), `./exercises-addon-${v}.json`)
+  ));
+  const byId = new Map(packs.flatMap(pack => pack.exercises || []).map(item => [item.id, item]));
   return new Response(JSON.stringify({
-    version: "2.5.0",
-    updatedAt: "2026-08-20",
+    version: "2.6.0",
+    updatedAt: "2026-08-24",
     exercises: [...byId.values()]
   }), {
     status: 200,
-    headers: {
-      "Content-Type": "application/json; charset=utf-8",
-      "Cache-Control": "no-store"
-    }
+    headers: { "Content-Type": "application/json; charset=utf-8", "Cache-Control": "no-store" }
   });
 }
 
@@ -81,7 +68,7 @@ self.addEventListener("fetch", event => {
   if (url.origin !== self.location.origin) return;
 
   if (url.pathname.endsWith("/exercises-addon-2.2.json")) {
-    event.respondWith(mergedAddonResponse(event));
+    event.respondWith(mergedAddonResponse());
     return;
   }
 

@@ -1,4 +1,4 @@
-const CACHE = 'cyberforge-v9-oauth-container-graphql';
+const CACHE = 'cyberforge-v10-mtls-binding-cicd';
 const ASSETS = [
   './',
   './index.html',
@@ -14,6 +14,7 @@ const ASSETS = [
   './update-2026-08-14.js',
   './update-2026-08-18.js',
   './update-2026-08-21.js',
+  './update-2026-08-25.js',
   './attack-defense.js',
   './real-world-examples.js',
   './update-2026-08-07-examples.js',
@@ -21,6 +22,7 @@ const ASSETS = [
   './update-2026-08-14-examples.js',
   './update-2026-08-18-examples.js',
   './update-2026-08-21-examples.js',
+  './update-2026-08-25-examples.js',
   './real-world-ui.js',
   './manifest.webmanifest',
   './icon.svg'

@@ -77,3 +77,11 @@ Aggiunti 24 nuovi esercizi nel pacchetto `exercises-addon-2.7.json`: 4 per C#, S
 Rispetto alla 2.6.0 aumenta il focus sulla traduzione di requisiti reali in codice e sul ragionamento end-to-end: una stessa regola viene affrontata come validazione, aggiornamento massivo, gestione dello stato UI, query sicura o diagnosi di bug. Sono stati aggiunti anche più esercizi in cui bisogna scegliere una strategia, non soltanto completare la sintassi.
 
 La PWA 2.7 usa la cache `codeforge-v2-7-2026-08-27`, include offline `exercises-addon-2.7.json` e fonde i pacchetti 2.2–2.7 tramite ID, mantenendo compatibili i progressi esistenti.
+
+## Aggiornamento 2.8.0
+
+Aggiunti 24 nuovi esercizi nel pacchetto `exercises-addon-2.8.json`, con 4 esercizi per C#, SQL Server, Angular, Git, Debugging e Logica e difficoltà crescente da Base a Esperto. I nuovi casi includono guard clause, filtri LINQ, doppia enumerazione, `NULL`, `GROUP BY/HAVING`, UPDATE protetti e transazioni, validazioni Angular, aggiornamenti immutabili, `switchMap`, condizioni booleane corrette, cherry-pick e gestione dei conflitti, lettura degli stack trace, regressioni con `git bisect`, profiling di salvataggi massivi, deduplicazione con `HashSet`, edge case di `Any`/`All` e chunking di collezioni.
+
+Rispetto alla 2.7.0 aumenta il focus sul passaggio da requisito a implementazione verificabile e sulla capacità di diagnosticare il flusso completo: precondizioni, stato, query, UI, performance e recovery. Sono stati aggiunti più esercizi in cui il problema va prima scomposto e solo dopo tradotto in codice.
+
+La PWA 2.8 usa la cache `codeforge-v2-8-2026-08-31`, include offline `exercises-addon-2.8.json` e fonde i pacchetti 2.2–2.8 tramite ID, mantenendo compatibili i progressi esistenti.

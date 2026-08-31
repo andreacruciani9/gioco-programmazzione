@@ -1,4 +1,4 @@
-const CACHE = "codeforge-v2-7-2026-08-27";
+const CACHE = "codeforge-v2-8-2026-08-31";
 const CORE = [
   "./",
   "./index.html",
@@ -14,7 +14,8 @@ const CORE = [
   "./exercises-addon-2.4.json",
   "./exercises-addon-2.5.json",
   "./exercises-addon-2.6.json",
-  "./exercises-addon-2.7.json"
+  "./exercises-addon-2.7.json",
+  "./exercises-addon-2.8.json"
 ];
 
 self.addEventListener("install", event => {
@@ -48,14 +49,14 @@ async function readJson(requestUrl, fallbackPath) {
 
 async function mergedAddonResponse() {
   const root = new URL("./", self.location.href);
-  const versions = ["2.2", "2.3", "2.4", "2.5", "2.6", "2.7"];
+  const versions = ["2.2", "2.3", "2.4", "2.5", "2.6", "2.7", "2.8"];
   const packs = await Promise.all(versions.map(v =>
     readJson(new URL(`exercises-addon-${v}.json`, root), `./exercises-addon-${v}.json`)
   ));
   const byId = new Map(packs.flatMap(pack => pack.exercises || []).map(item => [item.id, item]));
   return new Response(JSON.stringify({
-    version: "2.7.0",
-    updatedAt: "2026-08-27",
+    version: "2.8.0",
+    updatedAt: "2026-08-31",
     exercises: [...byId.values()]
   }), {
     status: 200,

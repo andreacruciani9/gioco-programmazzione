@@ -1,4 +1,4 @@
-const CACHE = 'cyberforge-v11-wifi-authz-ir-resilience';
+const CACHE = 'cyberforge-v12-network-csp-cloud-iam';
 const ASSETS = [
   './',
   './index.html',
@@ -16,6 +16,7 @@ const ASSETS = [
   './update-2026-08-21.js',
   './update-2026-08-25.js',
   './update-2026-08-28.js',
+  './update-2026-09-01.js',
   './attack-defense.js',
   './real-world-examples.js',
   './update-2026-08-07-examples.js',
@@ -25,6 +26,7 @@ const ASSETS = [
   './update-2026-08-21-examples.js',
   './update-2026-08-25-examples.js',
   './update-2026-08-28-examples.js',
+  './update-2026-09-01-examples.js',
   './real-world-ui.js',
   './manifest.webmanifest',
   './icon.svg'

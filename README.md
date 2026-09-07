@@ -93,3 +93,11 @@ Aggiunti 24 nuovi esercizi nel pacchetto `exercises-addon-2.9.json`, con 4 eserc
 Rispetto alla 2.8.0 aumenta soprattutto il focus su robustezza e diagnosi: più esercizi richiedono di ragionare su stato concorrente, precondizioni del database, ciclo di vita Angular, riproducibilità dei bug e protezione da modifiche accidentali. Sono stati introdotti anche casi più vicini a flussi applicativi reali, come cambio stato di una commessa, aggiornamenti cliente difensivi e gestione centralizzata di una pagina in sola lettura.
 
 La PWA 2.9 usa la cache `codeforge-v2-9-2026-09-03`, include offline `exercises-addon-2.9.json` e fonde i pacchetti 2.2–2.9 tramite ID, mantenendo compatibili i progressi esistenti.
+
+## Aggiornamento 3.0.0
+
+Aggiunti 24 nuovi esercizi nel pacchetto `exercises-addon-3.0.json`, con 4 esercizi per C#, SQL Server, Angular, Git, Debugging e Logica e difficoltà crescente da Base a Esperto. La release introduce conversioni sicure e `CancellationToken` in C#, deadlock e UPDATE con `OUTPUT` in SQL Server, validazioni condizionali e ricerche RxJS multi-filtro in Angular, `stash`, `worktree`, `amend` e `bisect` in Git, diagnosi end-to-end, test di regressione e memory leak nel debugging, oltre a De Morgan, sliding window, edge case e macchine a stati nella parte logica.
+
+Rispetto alla 2.9.0 aumenta il focus sulla progettazione del flusso prima dell'implementazione: più esercizi chiedono di scomporre requisiti, rendere deterministiche le regole, prevenire stati parziali e scegliere una strategia di diagnosi o un algoritmo adatto invece di limitarsi a completare sintassi già nota.
+
+La PWA 3.0 usa la cache `codeforge-v3-0-2026-09-07`, include offline `exercises-addon-3.0.json` e fonde i pacchetti 2.2–3.0 tramite ID, mantenendo compatibili i progressi esistenti.

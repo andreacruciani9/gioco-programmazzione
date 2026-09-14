@@ -101,3 +101,19 @@ Aggiunti 24 nuovi esercizi nel pacchetto `exercises-addon-3.0.json`, con 4 eserc
 Rispetto alla 2.9.0 aumenta il focus sulla progettazione del flusso prima dell'implementazione: più esercizi chiedono di scomporre requisiti, rendere deterministiche le regole, prevenire stati parziali e scegliere una strategia di diagnosi o un algoritmo adatto invece di limitarsi a completare sintassi già nota.
 
 La PWA 3.0 usa la cache `codeforge-v3-0-2026-09-07`, include offline `exercises-addon-3.0.json` e fonde i pacchetti 2.2–3.0 tramite ID, mantenendo compatibili i progressi esistenti.
+
+## Aggiornamento 3.1.0
+
+Aggiunti 18 nuovi esercizi nel pacchetto `exercises-addon-3.1.json`, con tre livelli per C#, SQL Server, Angular, Git, Debugging e Logica. La release approfondisce mapping e perdita di dati, cambi di stato, `HAVING`, UPDATE protetti, stato Angular immutabile, pagine read-only, cherry-pick e reflog, diagnosi di endpoint 404, allegati intermittenti, condizioni booleane, range nullable e conteggio frequenze.
+
+Rispetto alla 3.0.0 il focus si sposta maggiormente sui problemi quotidiani di manutenzione applicativa e sul tracing dei dati attraverso frontend, API, mapping e persistenza.
+
+La PWA 3.1 usa la cache `codeforge-v3-1-2026-09-10`, include offline `exercises-addon-3.1.json` e fonde i pacchetti 2.2–3.1 tramite ID.
+
+## Aggiornamento 3.2.0
+
+Aggiunti 24 nuovi esercizi nel pacchetto `exercises-addon-3.2.json`, con 4 esercizi per C#, SQL Server, Angular, Git, Debugging e Logica e difficoltà progressiva da Base a Esperto. I nuovi casi includono `string.IsNullOrWhiteSpace`, `FirstOrDefault`, validazioni MD51 sugli allegati, materializzazione LINQ, `NOT EXISTS`, `JSON_MODIFY`, transazioni SQL, proprietà e direttive read-only Angular per componenti custom, `switchMap`, staging per hunk, `git bisect`, hotfix isolati, breakpoint sul mapping, Msg 8114 varchar→bigint, profiling di salvataggi massivi, `All` su collezioni vuote, deduplicazione O(n) e scomposizione di requisiti in precondizioni.
+
+Rispetto alla 3.1.0 aumenta la componente pratica legata al flusso completo di una modifica: requisito → validazione → UI → backend → database → debugging. Sono stati aggiunti più esercizi in cui bisogna distinguere la validazione del salvataggio dalla modalità read-only, verificare gli edge case delle collezioni e scegliere dove iniziare il debugging prima di scrivere codice.
+
+La PWA 3.2 usa la cache `codeforge-v3-2-2026-09-14`, include offline `exercises-addon-3.2.json` e fonde i pacchetti 2.2–3.2 tramite ID, mantenendo compatibili i progressi esistenti.
